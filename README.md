@@ -71,6 +71,7 @@ sudo systemctl start piTree_app.service
 ### 7. Commands
 * to turn on: .c <r> <g> <b> | e.g. .c 0 128 0
 * to turn off: .off
+* to view info: .help
 
 ### Additional info
 * Thanks to The Pi Hut for tree.py script https://github.com/ThePiHut/rgbxmastree/tree/master
