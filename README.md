@@ -65,10 +65,15 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl enable piTree_app.service
 sudo systemctl daemon-reload
+```
+
+### 7. Stop/start service
+```bash
+sudo systemctl stop piTree_app.service
 sudo systemctl start piTree_app.service
 ```
 
-### 7. Commands
+### 8. Commands
 * to turn on: .c <r> <g> <b> | e.g. .c 0 128 0
 * to turn off: .off
 * to view info: .help
