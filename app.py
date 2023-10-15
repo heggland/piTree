@@ -17,6 +17,10 @@ intents.message_content = True
 client = discord.Client(command_prefix=".", intents=intents)
 
 @client.event
+  async def on_ready():
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='.help'))
+
+@client.event
 async def on_message(message):
     if message.content.startswith(".off"):
         try:
@@ -39,7 +43,14 @@ async def on_message(message):
                 await message.channel.send(
                     "Invalid RGB values. Please provide integers for R, G, and B. e.g. .c 126 0 0"
                 )
-        
+    
+    elif message.content.startswith(".help"):
+        await message.channel.send(
+            "Commands:\n"
+            "\t.c <R> <G> <B> - set color of tree\n"
+            "\t.off - turn off tree\n"
+            "\t.help - shows this message"
+        )    
 
 token =  Path('/home/pi/tree/id').read_text()
 client.run(token)
