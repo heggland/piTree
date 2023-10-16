@@ -28,7 +28,7 @@ sudo apt install python3.11-venv
 ### 3. Create a virtual environment
 ```bash
 python3 -m venv myenv
-source /<path>/tree/myenv/bin/activate
+source /home/pi/tree/myenv/bin/activate
 ```
 
 ### 4. Install pip packages
@@ -50,8 +50,8 @@ Description=My Christmas Tree App
 After=network.target
 
 [Service]
-ExecStart=/<path>/tree/myenv/bin/python /<path>/tree/app.py
-WorkingDirectory=/<path>/tree
+ExecStart=/home/pi/tree/myenv/bin/python /home/pi/tree/app.py
+WorkingDirectory=/home/pi/tree
 User=pi
 Group=pi
 Restart=always
