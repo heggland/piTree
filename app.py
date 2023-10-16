@@ -17,8 +17,8 @@ intents.message_content = True
 client = discord.Client(command_prefix=".", intents=intents)
 
 @client.event
-  async def on_ready():
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='.help'))
+async def on_ready():
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='.help'))
 
 @client.event
 async def on_message(message):
