@@ -34,7 +34,6 @@ source /<path>/tree/myenv/bin/activate
 ### 4. Install pip packages
 ```bash
 pip install discord.py
-pip install -U discord.py
 pip install gpiozero
 pip install colorzero
 ```
@@ -52,7 +51,7 @@ After=network.target
 
 [Service]
 ExecStart=/<path>/tree/myenv/bin/python /<path>/tree/app.py
-WorkingDirectory=/home/pi/tree
+WorkingDirectory=/<path>/tree
 User=pi
 Group=pi
 Restart=always
