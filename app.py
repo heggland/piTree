@@ -25,7 +25,7 @@ async def on_message(message):
     if message.content.startswith(".off"):
         try:
             subprocess.run(["python3", "/home/pi/tree/scripts/off.py"])
-            await message.channel.send("tree off  - updated by <@{message.author.id}>")
+            await message.channel.send(f"tree off  - updated by <@{message.author.id}>")
             await message.delete()
         except Exception as e:
             await message.channel.send(f"Error running off.py: {e}")
