@@ -22,7 +22,7 @@ sudo apt update
 ### 2. Install python packages
 ```bash
 sudo apt install python3-pip python3-cffi
-apt install python3.11-venv
+sudo apt install python3.11-venv
 ```
 
 ### 3. Create a virtual environment
