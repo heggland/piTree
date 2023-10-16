@@ -17,6 +17,7 @@ This guide provides instructions on setting up a Discord bot to control an RGB C
 
 ```bash
 sudo apt update
+cd /home/pi
 ```
 
 ### 2. Install python packages
