@@ -25,7 +25,7 @@ async def on_message(message):
     if message.content.startswith(".off"):
         try:
             subprocess.run(["python3", "/home/pi/tree/scripts/off.py"])
-            await message.channel.send(f"tree off  - updated by <@{message.author.id}>")
+            await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='.help'))
             await message.delete()
         except Exception as e:
             await message.channel.send(f"Error running off.py: {e}")
@@ -37,7 +37,7 @@ async def on_message(message):
             try:
                 r, g, b = map(int, command_args)
                 setColor(r, g, b)
-                await message.channel.send(f"Red: {r}, Green: {g}, Blue: {b} - updated by <@{message.author.id}>")
+                await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=(f'leds: {r} {g} {b}')))
                 await message.delete()
             except ValueError:
                 await message.channel.send(
@@ -50,7 +50,8 @@ async def on_message(message):
             "\t.c <R> <G> <B> - set color of tree\n"
             "\t.off - turn off tree\n"
             "\t.help - shows this message"
-        )    
+        )
+        await message.delete()
 
 token =  Path('/home/pi/tree/id').read_text()
 client.run(token)
